@@ -1,0 +1,203 @@
+.section {
+  position: relative;
+  padding: clamp(3rem, 6vh, 6rem) 0 5rem;
+  background-color: var(--bg-navy-dark);
+  overflow: hidden;
+  perspective: 1000px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.backgroundLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.ambientGlowLeft {
+  position: absolute;
+  top: 15%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 175, 196, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.ambientGlowRight {
+  position: absolute;
+  top: 45%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.ambientGlowBottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 250px;
+  background: radial-gradient(ellipse at bottom, rgba(0, 175, 196, 0.12) 0%, transparent 70%);
+  filter: blur(35px);
+}
+
+.bottomStateRail {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.4rem 1.25rem;
+  border-radius: 20px;
+  background: rgba(0, 175, 196, 0.04);
+  border: 1px dashed rgba(0, 175, 196, 0.25);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.stateTrackLine {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+}
+
+.nodeDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan-bright);
+  box-shadow: 0 0 8px var(--cyan-bright);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vh, 4rem);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--cyan);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--text-primary);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  perspective: 1200px;
+}
+
+.cardContainer {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  flex: 1 1 300px;
+  height: auto;
+  transform-style: preserve-3d;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.iconContainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  color: var(--blue-soft);
+  transition: color 0.4s ease;
+  z-index: 2;
+}
+
+.iconHovered {
+  color: var(--cyan-bright);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.cardDesc {
+  color: var(--blue-soft);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  z-index: 1;
+}
+
+.cardGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 175, 196, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

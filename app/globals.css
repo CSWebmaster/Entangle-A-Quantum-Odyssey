@@ -1,0 +1,150 @@
+:root {
+  /* Default Dark Mode Theme Palette */
+  --bg-primary: #071D33;
+  --bg-secondary: #092B46;
+  --bg-card: rgba(11, 53, 84, 0.6);
+  --bg-white: #FFFFFF;
+  --bg-navy: #071D33;
+  --bg-navy-dark: #051424;
+  --bg-blue-dark: #0B3554;
+  
+  --cyan: #00AFC4;
+  --cyan-bright: #11C5D9;
+  --teal: #19B8C8;
+  --blue: #1267A5;
+  --blue-soft: #65C7D8;
+
+  --gold: #EAA814;
+  --gold-bright: #F5B82E;
+  
+  --text-primary: #FAFAF7;
+  --text-secondary: #94A3B8;
+  --text-black: #0B1117;
+  --text-navy: #FAFAF7;
+  --text-white: #FAFAF7;
+  --text-muted: #94A3B8;
+
+  --border-light: rgba(0, 175, 196, 0.25);
+  --border-dark: rgba(255, 255, 255, 0.1);
+  
+  --glow-cyan: 0 0 20px rgba(0, 175, 196, 0.3);
+  --glow-blue: 0 0 30px rgba(18, 103, 165, 0.25);
+
+  --orbital-ring-color: rgba(0, 175, 196, 0.3);
+  --font-display: var(--font-oswald), 'Oswald', 'Inter', system-ui, sans-serif;
+  --font-body: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+[data-theme='light'] {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-white: #FFFFFF;
+  --bg-navy: #F1F5F9;
+  --bg-navy-dark: #E2E8F0;
+  --bg-blue-dark: #CBD5E1;
+  
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-navy: #0B192C;
+  --text-white: #0B192C;
+  --text-black: #0B192C;
+  --text-muted: #475569;
+
+  --cyan: #0284C7;
+  --cyan-bright: #0369A1;
+  --teal: #0D9488;
+  --blue: #2563EB;
+  --blue-soft: #1E3A8A;
+
+  --gold: #D97706;
+  --gold-bright: #B45309;
+
+  --border-light: rgba(2, 132, 199, 0.25);
+  --border-dark: rgba(15, 23, 42, 0.2);
+  --orbital-ring-color: rgba(2, 132, 199, 0.45);
+
+  --glow-cyan: 0 4px 20px rgba(2, 132, 199, 0.28);
+  --glow-blue: 0 4px 25px rgba(37, 99, 235, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-navy);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+::selection {
+  background: var(--cyan);
+  color: var(--bg-white);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-navy);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+/* Reduced Motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

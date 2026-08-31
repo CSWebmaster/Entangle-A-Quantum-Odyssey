@@ -1,0 +1,49 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--bg-navy);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.volunteerCta {
+  margin-top: 6rem;
+  padding: 4rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(234, 168, 20, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .volunteerCta {
+    padding: 2rem;
+  }
+}

@@ -1,0 +1,28 @@
+.cursorGlowContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cursorSpotlight {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  top: -275px;
+  left: -275px;
+  background: radial-gradient(circle, rgba(0, 175, 196, 0.22) 0%, rgba(2, 132, 199, 0.1) 40%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+[data-theme='light'] .cursorSpotlight {
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.16) 0%, rgba(0, 175, 196, 0.08) 40%, transparent 70%);
+  filter: blur(25px);
+}
