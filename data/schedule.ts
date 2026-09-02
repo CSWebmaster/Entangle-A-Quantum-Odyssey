@@ -9,7 +9,7 @@ export const scheduleDay1 = [
 export const scheduleDay2 = [
   { time: "09:00 AM", title: "QUANTUM CIRCUITS", description: "Exploring logic gates for qubits." },
   { time: "11:00 AM", title: "ALGORITHMS", description: "Shor's and Grover's algorithms explained." },
-  { time: "02:00 PM", title: "HANDS-ON EXPERIENCE", description: "Interactive session with quantum simulators." },
+  { time: "02:00 PM", title: "QUANTUM DEMONSTRATION", description: "Interactive demonstration with real quantum simulators." },
   { time: "04:00 PM", title: "APPLICATIONS", description: "Real-world impact of quantum computing." },
   { time: "05:30 PM", title: "EXPERT INTERACTION", description: "Q&A with researchers and closing ceremony." },
 ];

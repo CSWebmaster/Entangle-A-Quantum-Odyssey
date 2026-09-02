@@ -129,13 +129,52 @@ const InteractiveCard = ({ concept, index }: { concept: any, index: number }) =>
 
           {concept.id === "interference" && (
             <div className={styles.visualWrapper} style={{ perspective: 600 }}>
-               <motion.div style={{ position: 'relative', width: 60, height: 60, transformStyle: 'preserve-3d' }}
-                 animate={{ rotateX: 60, rotateZ: isHovered ? 360 : 0 }}
-                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}>
-                 <InterferenceVisual isHovered={isHovered} />
-                 {/* Add more 3D rings to interference */}
-                 <motion.div style={{ position: 'absolute', top: -10, left: -10, border: '1px solid var(--cyan-bright)', width: 80, height: 80, borderRadius: '50%' }} animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5], z: [0, 40, 0] }} transition={{ duration: 3, repeat: Infinity }} />
-               </motion.div>
+                <motion.div style={{ position: 'relative', width: 60, height: 60, transformStyle: 'preserve-3d' }}
+                  animate={{ rotateX: 60, rotateZ: isHovered ? 360 : 0 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}>
+                  <InterferenceVisual isHovered={isHovered} />
+                  {/* Add more 3D rings to interference */}
+                  <motion.div style={{ position: 'absolute', top: -10, left: -10, border: '1px solid var(--cyan-bright)', width: 80, height: 80, borderRadius: '50%' }} animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5], z: [0, 40, 0] }} transition={{ duration: 3, repeat: Infinity }} />
+                </motion.div>
+            </div>
+          )}
+
+          {concept.id === "circuits" && (
+            <div className={styles.visualWrapper} style={{ perspective: 600 }}>
+              <motion.div style={{ position: 'relative', width: 100, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                animate={{ scale: isHovered ? 1.08 : 1 }}
+                transition={{ duration: 0.3 }}>
+                <svg width="100" height="60" style={{ position: 'absolute', top: 0, left: 0 }}>
+                  <line x1="5" y1="30" x2="95" y2="30" stroke="var(--cyan)" strokeWidth="1.5" strokeOpacity="0.5" />
+                  <rect x="36" y="16" width="28" height="28" rx="4" fill="#071D33" stroke="var(--cyan-bright)" strokeWidth="1.5" />
+                  <text x="50" y="35" fill="var(--cyan-bright)" fontSize="13" fontFamily="monospace" fontWeight="bold" textAnchor="middle">H</text>
+                </svg>
+                <motion.div
+                  style={{ position: 'absolute', top: 27, left: 8, width: 6, height: 6, borderRadius: '50%', background: 'var(--cyan-bright)', boxShadow: '0 0 8px var(--cyan-bright)' }}
+                  animate={{ x: [0, 80, 0], opacity: [0, 1, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </motion.div>
+            </div>
+          )}
+
+          {concept.id === "algorithms" && (
+            <div className={styles.visualWrapper} style={{ perspective: 600 }}>
+              <motion.div style={{ position: 'relative', width: 80, height: 60, transformStyle: 'preserve-3d' }}
+                animate={{ rotateY: isHovered ? 180 : 0 }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
+                <svg width="80" height="60" viewBox="0 0 80 60" fill="none">
+                  <motion.rect x="12" y="32" width="8" height="18" rx="2" fill="var(--cyan)" opacity="0.5"
+                    animate={{ height: [18, 30, 18], y: [32, 20, 32] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
+                  <motion.rect x="28" y="22" width="8" height="28" rx="2" fill="var(--cyan)" opacity="0.7"
+                    animate={{ height: [28, 14, 28], y: [22, 36, 22] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.3 }} />
+                  <motion.rect x="44" y="12" width="8" height="38" rx="2" fill="var(--cyan-bright)" opacity="0.95"
+                    animate={{ height: [38, 42, 38], y: [12, 8, 12] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }} />
+                  <motion.rect x="60" y="26" width="8" height="24" rx="2" fill="var(--teal)" opacity="0.6"
+                    animate={{ height: [24, 16, 24], y: [26, 34, 26] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.9 }} />
+                  <line x1="5" y1="52" x2="75" y2="52" stroke="var(--cyan)" strokeWidth="1" strokeOpacity="0.4" />
+                </svg>
+              </motion.div>
             </div>
           )}
         </div>

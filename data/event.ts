@@ -1,7 +1,7 @@
 export const eventInfo = {
   title: "ENTANGLE",
   subtitle: "A QUANTUM ODYSSEY",
-  date: "08 — 09 SEPTEMBER 2026",
+  date: "08 — 09 September 2026",
   location: "SILVER OAK UNIVERSITY",
   description: "Explore the real quantum computing. One qubit at a time.",
   about: "Welcome to the Quantum Realm. Entangle is an immersive journey into the fundamentals of quantum computing, designed to bridge the gap between abstract theoretical physics and practical technological applications. Join the IEEE Computer Society Student Branch Chapter for an unprecedented exploration of the future of computation.",
@@ -32,5 +32,15 @@ export const quantumConcepts = [
     id: "interference",
     title: "INTERFERENCE",
     description: "Quantum states can be manipulated to constructively or destructively interfere, amplifying correct solutions and canceling out incorrect ones.",
+  },
+  {
+    id: "circuits",
+    title: "QUANTUM CIRCUITS",
+    description: "Sequences of quantum logic gates like Hadamard and CNOT that manipulate qubit states to perform computational operations.",
+  },
+  {
+    id: "algorithms",
+    title: "ALGORITHMS",
+    description: "Harnessing quantum parallelism and interference through algorithms like Shor's and Grover's for exponential computational speedup.",
   },
 ];

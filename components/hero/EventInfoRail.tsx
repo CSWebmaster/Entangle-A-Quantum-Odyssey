@@ -28,7 +28,7 @@ export default function EventInfoRail() {
             </div>
             <div className={styles.textContent}>
               <span className={styles.label}>DATE</span>
-              <span className={styles.value}>8th & 9th SEPTEMBER 2026</span>
+              <span className={styles.value}>8th & 9th September 2026</span>
             </div>
           </div>
 
@@ -41,7 +41,7 @@ export default function EventInfoRail() {
             </div>
             <div className={styles.textContent}>
               <span className={styles.label}>TIME</span>
-              <span className={styles.value}>2:00 P.M. ONWARDS</span>
+              <span className={styles.value}>2:00 P.M. Onwards</span>
             </div>
           </div>
 

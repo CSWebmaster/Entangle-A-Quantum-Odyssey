@@ -225,12 +225,40 @@ export const QuantumLocation = ({ isHovered = false }) => (
   <div style={{ position: 'relative', width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--cyan)" strokeWidth="1.5">
       <path d="M20 8 C14.477 8 10 12.477 10 18 C10 25.5 20 34 20 34 C20 34 30 25.5 30 18 C30 12.477 25.523 8 20 8 Z" />
-      <circle cx="20" cy="18" r="3" fill="var(--cyan-bright)" stroke="none" />
+      {/* Contained pulse inside the pin head - never expands out */}
+      <motion.circle 
+        cx="20" 
+        cy="18" 
+        r="4.5" 
+        stroke="var(--cyan-bright)" 
+        strokeWidth="1"
+        fill="none"
+        animate={{ r: [3, 5, 3], opacity: [0.9, 0.3, 0.9] }}
+        transition={{ duration: isHovered ? 1.5 : 2.5, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <circle cx="20" cy="18" r="2.5" fill="var(--cyan-bright)" stroke="none" />
     </svg>
+  </div>
+);
+
+export const QuantumCertificate = ({ isHovered = false }) => (
+  <div style={{ position: 'relative', width: 60, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="var(--cyan)" strokeWidth="1.5">
+      {/* Certificate scroll parchment */}
+      <rect x="13" y="10" width="34" height="40" rx="3" />
+      <line x1="19" y1="18" x2="33" y2="18" strokeDasharray="2 2" />
+      <line x1="19" y1="24" x2="41" y2="24" strokeDasharray="2 2" />
+      <line x1="19" y1="30" x2="31" y2="30" strokeDasharray="2 2" />
+      {/* Quantum seal medal */}
+      <circle cx="35" cy="38" r="7" fill="#071D33" stroke="var(--cyan-bright)" strokeWidth="1.5" />
+      {/* Ribbon tails */}
+      <path d="M32 44 L30 52 L35 49 L40 52 L38 44" fill="none" stroke="var(--cyan)" strokeWidth="1.2" />
+    </svg>
+    {/* Glowing quantum core inside seal */}
     <motion.div
-      style={{ position: 'absolute', top: 18, left: 20, width: 1, height: 1, border: '1px solid var(--cyan-bright)', borderRadius: '50%' }}
-      animate={{ scale: [1, 15, 1], opacity: [1, 0, 1] }}
-      transition={{ duration: isHovered ? 4 : 2, repeat: Infinity, ease: 'linear' }}
+      style={{ position: 'absolute', top: 35, left: 32, width: 6, height: 6, borderRadius: '50%', background: 'var(--cyan-bright)' }}
+      animate={{ scale: isHovered ? [1, 1.4, 1] : 1, opacity: [0.7, 1, 0.7] }}
+      transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
     />
   </div>
 );

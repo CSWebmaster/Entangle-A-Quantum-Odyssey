@@ -3,12 +3,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./WhyAttend.module.css";
-import { QuantumBook, QuantumEntangledNodes, QuantumCircuitMini, QuantumFlask, OrbitalRing, QuantumParticle, QuantumGrid } from "../visuals/QuantumPrimitives";
+import { QuantumBook, QuantumEntangledNodes, QuantumCertificate, QuantumFlask, OrbitalRing, QuantumParticle, QuantumGrid } from "../visuals/QuantumPrimitives";
 
 const BENEFITS = [
   { id: "learn", label: "LEARNING", text: "Understand quantum concepts from leading experts without advanced math." },
   { id: "network", label: "NETWORKING", text: "Connect with researchers, pioneers, and fellow quantum enthusiasts." },
-  { id: "swags", label: "SWAGS", text: "Earn exclusive quantum odyssey merchandise and certifications." },
+  { id: "certificate", label: "CERTIFICATES", text: "Receive official IEEE certification to showcase your quantum computing journey." },
+  { id: "swags", label: "SWAGS", text: "Earn exclusive quantum odyssey merchandise and goodies." },
 ];
 
 export default function WhyAttend() {
@@ -48,7 +49,7 @@ export default function WhyAttend() {
             let IconComponent;
             if (b.id === 'learn') IconComponent = QuantumBook;
             else if (b.id === 'network') IconComponent = QuantumEntangledNodes;
-            else if (b.id === 'handson') IconComponent = QuantumCircuitMini;
+            else if (b.id === 'certificate') IconComponent = QuantumCertificate;
             else IconComponent = QuantumFlask;
 
             return (
