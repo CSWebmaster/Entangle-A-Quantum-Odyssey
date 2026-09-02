@@ -16,7 +16,7 @@ export const faqData = [
     answer: "Navigate to the Odyssey Identity section, enter your name, upload an optional photo, and download your personalized quantum badge."
   },
   {
-    question: "How do I become a volunteer?",
-    answer: "Click the 'Volunteer' button in the navigation bar to access the volunteer portal. Only verified members can generate volunteer cards."
+    question: "Where can I follow updates and connect with the community?",
+    answer: "Follow our official Silver Oak University IEEE Student Branch channels on Instagram (@ieee_silveroakuni), LinkedIn, X (@IEEE_SilverOak), and Facebook for live announcements, speaker highlights, and event updates, or reach out at ieee@silveroakuni.ac.in."
   },
 ];

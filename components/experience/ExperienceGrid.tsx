@@ -8,6 +8,7 @@ import { OrbitalRing, QuantumParticle, QuantumBook, QuantumFlask, QuantumCircuit
 const experiences = [
   { id: "e1", title: "LEARN", desc: "Understand quantum mechanics without advanced math.", Visual: QuantumBook },
   { id: "e2", title: "EXPERIMENT", desc: "Interactive sessions with real quantum simulators.", Visual: QuantumFlask },
+  { id: "e3", title: "DEMONSTRATION", desc: "Live walkthroughs of quantum circuits and real-time execution.", Visual: QuantumCircuitMini },
   { id: "e4", title: "INTERACT", desc: "Engage with leading researchers in the field.", Visual: QuantumSignal },
   { id: "e5", title: "EXPLORE", desc: "Discover how qubits change computation.", Visual: QuantumCompass },
   { id: "e6", title: "CONNECT", desc: "Network with like-minded pioneers.", Visual: QuantumEntangledNodes },
