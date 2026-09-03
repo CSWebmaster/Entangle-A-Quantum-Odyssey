@@ -71,10 +71,6 @@ export default function VolunteerPage() {
                 {isVerifying ? "VERIFYING..." : "VERIFY IDENTITY"}
               </Button>
             </form>
-
-            <div className={styles.demoNote}>
-              <p>For demonstration, use code: <strong>V-12345</strong></p>
-            </div>
           </div>
         ) : (
           <div className={styles.generatorSection}>
