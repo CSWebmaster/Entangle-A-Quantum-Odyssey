@@ -110,12 +110,6 @@ function SpeakerCard({ speaker, index }: any) {
           <h3 className={styles.name}>{speaker.name}</h3>
           <p className={styles.designation}>{speaker.designation}</p>
           <p className={styles.organization}>{speaker.organization}</p>
-          {speaker.topic && (
-            <div className={styles.topic}>
-              <span className={styles.topicLabel}>SESSION:</span>
-              <span className={styles.topicText}>{speaker.topic}</span>
-            </div>
-          )}
           {speaker.linkedin && (
             <a 
               href={speaker.linkedin} 

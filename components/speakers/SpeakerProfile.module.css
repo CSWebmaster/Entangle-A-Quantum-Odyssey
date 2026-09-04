@@ -141,30 +141,6 @@
   margin-bottom: 2rem;
 }
 
-.topic {
-  background: rgba(0, 175, 196, 0.05);
-  padding: 1.5rem;
-  border-left: 3px solid var(--cyan);
-  border-radius: 0 8px 8px 0;
-}
-
-.topicLabel {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-}
-
-.topicText {
-  display: block;
-  font-size: 1.25rem;
-  color: var(--text-navy);
-  font-weight: 500;
-  line-height: 1.4;
-}
-
 .linkedinBtn {
   display: inline-flex;
   align-items: center;
