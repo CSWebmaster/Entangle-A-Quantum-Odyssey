@@ -12,7 +12,7 @@ export const applications = [
   {
     id: "optimization",
     title: "Optimization",
-    description: "Solving complex logistics, financial modeling, and supply chain problems far faster than classical supercomputers.",
+    description: "Solving complex logistics, financial modeling and supply chain problems far faster than classical supercomputers.",
   },
   {
     id: "materials",

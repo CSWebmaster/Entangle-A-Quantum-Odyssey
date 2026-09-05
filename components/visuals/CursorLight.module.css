@@ -21,8 +21,3 @@
   pointer-events: none;
   will-change: transform;
 }
-
-[data-theme='light'] .cursorSpotlight {
-  background: radial-gradient(circle, rgba(2, 132, 199, 0.16) 0%, rgba(0, 175, 196, 0.08) 40%, transparent 70%);
-  filter: blur(25px);
-}

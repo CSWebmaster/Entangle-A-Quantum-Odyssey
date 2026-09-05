@@ -4,13 +4,107 @@ import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Background3DElements.module.css";
 
+interface SphereProps {
+  initialStyle: React.CSSProperties;
+  coreType?: "cyan" | "gold";
+  rotateXDuration?: number;
+  rotateYDuration?: number;
+  reverse?: boolean;
+}
+
+function DraggableBlochSphere({ 
+  initialStyle, 
+  coreType = "cyan", 
+  rotateXDuration = 35, 
+  rotateYDuration = 35, 
+  reverse = false 
+}: SphereProps) {
+  return (
+    <motion.div
+      className={styles.draggableWrapper}
+      style={initialStyle}
+      drag
+      dragMomentum={true}
+      dragElastic={0.05}
+      whileHover={{ scale: 1.1 }}
+      whileDrag={{ scale: 1.22, cursor: "grabbing" }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <motion.div
+        className={styles.blochSphere3D}
+        animate={{
+          rotateX: reverse ? [360, 0] : [0, 360],
+          rotateY: [0, 360],
+        }}
+        transition={{
+          rotateX: { duration: rotateXDuration, repeat: Infinity, ease: "linear" },
+          rotateY: { duration: rotateYDuration, repeat: Infinity, ease: "linear" },
+        }}
+      >
+        <div className={`${styles.ring3D} ${styles.ringX}`} />
+        <div className={`${styles.ring3D} ${styles.ringY}`} />
+        <div className={`${styles.ring3D} ${styles.ringZ}`} />
+        <div className={coreType === "gold" ? styles.sphereCoreGold : styles.sphereCore} />
+      </motion.div>
+    </motion.div>
+  );
+}
+
+interface CubeProps {
+  initialStyle: React.CSSProperties;
+  faces: { front: string; back: string; right: string; left: string; top: string; bottom: string };
+  rotateXDuration?: number;
+  rotateYDuration?: number;
+  reverse?: boolean;
+}
+
+function DraggableQubitCube({
+  initialStyle,
+  faces,
+  rotateXDuration = 22,
+  rotateYDuration = 28,
+  reverse = false,
+}: CubeProps) {
+  return (
+    <motion.div
+      className={styles.draggableWrapper}
+      style={initialStyle}
+      drag
+      dragMomentum={true}
+      dragElastic={0.05}
+      whileHover={{ scale: 1.15 }}
+      whileDrag={{ scale: 1.3, cursor: "grabbing" }}
+      whileTap={{ scale: 0.92 }}
+    >
+      <motion.div
+        className={styles.cube3D}
+        animate={{
+          rotateX: reverse ? [360, 0] : [0, 360],
+          rotateY: reverse ? [360, 0] : [0, 360],
+        }}
+        transition={{
+          rotateX: { duration: rotateXDuration, repeat: Infinity, ease: "linear" },
+          rotateY: { duration: rotateYDuration, repeat: Infinity, ease: "linear" },
+        }}
+      >
+        <div className={`${styles.face} ${styles.front}`}>{faces.front}</div>
+        <div className={`${styles.face} ${styles.back}`}>{faces.back}</div>
+        <div className={`${styles.face} ${styles.right}`}>{faces.right}</div>
+        <div className={`${styles.face} ${styles.left}`}>{faces.left}</div>
+        <div className={`${styles.face} ${styles.top}`}>{faces.top}</div>
+        <div className={`${styles.face} ${styles.bottom}`}>{faces.bottom}</div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function Background3DElements() {
   const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
 
   // Smooth 3D parallax scroll transforms
-  const rotateX = useSpring(useTransform(scrollY, [0, 3000], [12, -12]), { stiffness: 40, damping: 20 });
-  const rotateY = useSpring(useTransform(scrollY, [0, 3000], [-8, 20]), { stiffness: 40, damping: 20 });
+  const rotateX = useSpring(useTransform(scrollY, [0, 3000], [10, -10]), { stiffness: 40, damping: 20 });
+  const rotateY = useSpring(useTransform(scrollY, [0, 3000], [-6, 16]), { stiffness: 40, damping: 20 });
 
   useEffect(() => {
     setMounted(true);
@@ -29,90 +123,55 @@ export default function Background3DElements() {
         }}
       >
         {/* 3D Wireframe Bloch Sphere 1 */}
-        <motion.div 
-          className={styles.blochSphere3D}
-          style={{ top: '15%', left: '6%' }}
-          animate={{
-            rotateX: [0, 360],
-            rotateY: [0, 360],
-          }}
-          transition={{
-            duration: 35,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <div className={`${styles.ring3D} ${styles.ringX}`} />
-          <div className={`${styles.ring3D} ${styles.ringY}`} />
-          <div className={`${styles.ring3D} ${styles.ringZ}`} />
-          <div className={styles.sphereCore} />
-        </motion.div>
+        <DraggableBlochSphere
+          initialStyle={{ top: "15%", left: "6%" }}
+          coreType="cyan"
+          rotateXDuration={35}
+          rotateYDuration={35}
+        />
 
         {/* 3D Wireframe Bloch Sphere 2 */}
-        <motion.div 
-          className={styles.blochSphere3D}
-          style={{ top: '60%', right: '5%' }}
-          animate={{
-            rotateX: [360, 0],
-            rotateY: [0, 360],
-          }}
-          transition={{
-            duration: 45,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <div className={`${styles.ring3D} ${styles.ringX}`} />
-          <div className={`${styles.ring3D} ${styles.ringY}`} />
-          <div className={`${styles.ring3D} ${styles.ringZ}`} />
-          <div className={styles.sphereCoreGold} />
-        </motion.div>
+        <DraggableBlochSphere
+          initialStyle={{ top: "55%", right: "6%" }}
+          coreType="gold"
+          rotateXDuration={45}
+          rotateYDuration={45}
+          reverse={true}
+        />
+
+        {/* 3D Wireframe Bloch Sphere 3 */}
+        <DraggableBlochSphere
+          initialStyle={{ top: "85%", left: "7%" }}
+          coreType="cyan"
+          rotateXDuration={40}
+          rotateYDuration={40}
+          reverse={true}
+        />
 
         {/* 3D Floating Quantum Qubit Cube 1 */}
-        <motion.div 
-          className={styles.cube3D}
-          style={{ top: '32%', right: '14%' }}
-          animate={{
-            rotateX: [0, 360],
-            rotateY: [0, 360],
-            y: [-15, 15, -15]
-          }}
-          transition={{
-            rotateX: { duration: 22, repeat: Infinity, ease: "linear" },
-            rotateY: { duration: 28, repeat: Infinity, ease: "linear" },
-            y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-          }}
-        >
-          <div className={`${styles.face} ${styles.front}`}>|0⟩</div>
-          <div className={`${styles.face} ${styles.back}`}>|1⟩</div>
-          <div className={`${styles.face} ${styles.right}`}>H</div>
-          <div className={`${styles.face} ${styles.left}`}>X</div>
-          <div className={`${styles.face} ${styles.top}`}>Z</div>
-          <div className={`${styles.face} ${styles.bottom}`}>ψ</div>
-        </motion.div>
+        <DraggableQubitCube
+          initialStyle={{ top: "28%", right: "12%" }}
+          faces={{ front: "|0⟩", back: "|1⟩", right: "H", left: "X", top: "Z", bottom: "ψ" }}
+          rotateXDuration={22}
+          rotateYDuration={28}
+        />
 
         {/* 3D Floating Quantum Qubit Cube 2 */}
-        <motion.div 
-          className={styles.cube3D}
-          style={{ top: '78%', left: '10%' }}
-          animate={{
-            rotateX: [360, 0],
-            rotateY: [0, 360],
-            y: [15, -15, 15]
-          }}
-          transition={{
-            rotateX: { duration: 26, repeat: Infinity, ease: "linear" },
-            rotateY: { duration: 32, repeat: Infinity, ease: "linear" },
-            y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-          }}
-        >
-          <div className={`${styles.face} ${styles.front}`}>Q</div>
-          <div className={`${styles.face} ${styles.back}`}>U</div>
-          <div className={`${styles.face} ${styles.right}`}>B</div>
-          <div className={`${styles.face} ${styles.left}`}>I</div>
-          <div className={`${styles.face} ${styles.top}`}>T</div>
-          <div className={`${styles.face} ${styles.bottom}`}>✦</div>
-        </motion.div>
+        <DraggableQubitCube
+          initialStyle={{ top: "65%", left: "10%" }}
+          faces={{ front: "Q", back: "U", right: "B", left: "I", top: "T", bottom: "✦" }}
+          rotateXDuration={26}
+          rotateYDuration={32}
+          reverse={true}
+        />
+
+        {/* 3D Floating Quantum Qubit Cube 3 */}
+        <DraggableQubitCube
+          initialStyle={{ top: "88%", right: "9%" }}
+          faces={{ front: "|1⟩", back: "|0⟩", right: "Z", left: "H", top: "X", bottom: "✦" }}
+          rotateXDuration={24}
+          rotateYDuration={30}
+        />
 
         {/* 3D Grid Floor */}
         <div className={styles.gridFloor3D} />

@@ -41,7 +41,7 @@ export default function EventInfoRail() {
             </div>
             <div className={styles.textContent}>
               <span className={styles.label}>TIME</span>
-              <span className={styles.value}>2:00 P.M. Onwards</span>
+              <span className={styles.value}>2:00 PM – 5:00 PM (Both Days)</span>
             </div>
           </div>
 

@@ -80,16 +80,6 @@
   margin-bottom: 0.75rem;
 }
 
-[data-theme='light'] .timerGrid {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(2, 132, 199, 0.25);
-  box-shadow: 0 10px 35px rgba(2, 132, 199, 0.12);
-}
-
-[data-theme='light'] .colon {
-  color: #0284C7;
-  opacity: 0.85;
-}
 
 @keyframes pulseLive {
   0%, 100% {

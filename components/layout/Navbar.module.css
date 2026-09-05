@@ -170,26 +170,6 @@
   text-shadow: var(--glow-cyan);
 }
 
-.themeToggleBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--border-light);
-  background: rgba(0, 175, 196, 0.08);
-  color: var(--cyan);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.themeToggleBtn:hover {
-  background: var(--cyan);
-  color: #FFFFFF;
-  transform: rotate(15deg);
-  box-shadow: var(--glow-cyan);
-}
 
 /* Mobile Toggle */
 .mobileToggle {

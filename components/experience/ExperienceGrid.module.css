@@ -1,7 +1,7 @@
 .section {
   position: relative;
   padding: clamp(3rem, 6vh, 6rem) 0 5rem;
-  background-color: var(--bg-navy-dark);
+  background-color: transparent;
   overflow: hidden;
   perspective: 1000px;
   min-height: 100vh;

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -18,13 +18,9 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
-    // Check saved theme or default to dark
-    const savedTheme = (localStorage.getItem("theme") as "dark" | "light") || "dark";
-    setTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
+    document.documentElement.setAttribute("data-theme", "dark");
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
@@ -49,13 +45,6 @@ export default function Navbar() {
     handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    localStorage.setItem("theme", nextTheme);
-    document.documentElement.setAttribute("data-theme", nextTheme);
-  };
 
   return (
     <motion.nav 
@@ -99,7 +88,7 @@ export default function Navbar() {
 
         {/* Desktop Nav: Right Actions */}
         <div className={styles.navActions}>
-          <Link href="#card-generator" className={styles.generateBadgeBtn}>
+          <Link href="/badge" className={styles.generateBadgeBtn}>
             Generate Badge
           </Link>
           <a 
@@ -113,14 +102,6 @@ export default function Navbar() {
           <Link href="/volunteer" className={styles.volunteerNavBtn}>
             Volunteer
           </Link>
-          <button 
-            onClick={toggleTheme} 
-            className={styles.themeToggleBtn}
-            aria-label="Toggle Dark and Light Mode"
-            title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
-          >
-            {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
-          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -154,7 +135,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link 
-              href="#card-generator" 
+              href="/badge" 
               className={styles.mobileActionBtn}
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -177,15 +158,6 @@ export default function Navbar() {
             >
               Volunteer Portal
             </Link>
-            <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '0.5rem' }}>
-              <button 
-                onClick={toggleTheme} 
-                className={styles.themeToggleBtn}
-                aria-label="Toggle Theme"
-              >
-                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>

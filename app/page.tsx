@@ -6,7 +6,6 @@ import OdysseyTimeline from "@/components/odyssey/OdysseyTimeline";
 import SpeakerProfile from "@/components/speakers/SpeakerProfile";
 import ScheduleSection from "@/components/schedule/ScheduleSection";
 import ExperienceGrid from "@/components/experience/ExperienceGrid";
-import CardGeneratorSection from "@/components/card/CardGeneratorSection";
 import FAQSection from "@/components/faq/FAQSection";
 import Footer from "@/components/layout/Footer";
 
@@ -21,7 +20,6 @@ export default function Home() {
       <SpeakerProfile />
       <ScheduleSection />
       <ExperienceGrid />
-      <CardGeneratorSection />
       <FAQSection />
       <Footer />
     </main>

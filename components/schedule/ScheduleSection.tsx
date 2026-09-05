@@ -76,27 +76,6 @@ export default function ScheduleSection() {
         </div>
 
         <div className={styles.capsulesWrapper}>
-          
-          {/* Quantum Entanglement Bridge connecting Day 1 to Day 2 */}
-          <div className={styles.quantumBridge}>
-            <svg className={styles.bridgeSvg} viewBox="0 0 120 60">
-              <defs>
-                <linearGradient id="bridgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="var(--cyan-bright)" />
-                  <stop offset="100%" stopColor="var(--teal)" />
-                </linearGradient>
-              </defs>
-              <line x1="0" y1="30" x2="120" y2="30" stroke="url(#bridgeGrad)" strokeWidth="2" strokeDasharray="4 4" opacity="0.6" />
-              <motion.circle 
-                cy="30" 
-                r="4" 
-                fill="var(--cyan-bright)"
-                animate={{ cx: [0, 120, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </svg>
-          </div>
-
           <div className={styles.capsulesGrid}>
             
             {/* Day 1 Capsule */}

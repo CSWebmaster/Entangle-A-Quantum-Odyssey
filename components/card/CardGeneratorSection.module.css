@@ -1,6 +1,6 @@
 .section {
   padding: 8rem 0;
-  background-color: var(--bg-navy);
+  background-color: transparent;
 }
 
 .container {

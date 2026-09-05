@@ -63,7 +63,7 @@ export default function Hero() {
               <Button href="#odyssey" variant="secondary">
                 EXPLORE ODYSSEY
               </Button>
-              <Button href="#card-generator" variant="outline">
+              <Button href="/badge" variant="outline">
                 GENERATE BADGE
               </Button>
             </div>

@@ -36,38 +36,6 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-[data-theme='light'] {
-  --bg-primary: #F8FAFC;
-  --bg-secondary: #FFFFFF;
-  --bg-card: rgba(255, 255, 255, 0.95);
-  --bg-white: #FFFFFF;
-  --bg-navy: #F1F5F9;
-  --bg-navy-dark: #E2E8F0;
-  --bg-blue-dark: #CBD5E1;
-  
-  --text-primary: #0B192C;
-  --text-secondary: #334155;
-  --text-navy: #0B192C;
-  --text-white: #0B192C;
-  --text-black: #0B192C;
-  --text-muted: #475569;
-
-  --cyan: #0284C7;
-  --cyan-bright: #0369A1;
-  --teal: #0D9488;
-  --blue: #2563EB;
-  --blue-soft: #1E3A8A;
-
-  --gold: #D97706;
-  --gold-bright: #B45309;
-
-  --border-light: rgba(2, 132, 199, 0.25);
-  --border-dark: rgba(15, 23, 42, 0.2);
-  --orbital-ring-color: rgba(2, 132, 199, 0.45);
-
-  --glow-cyan: 0 4px 20px rgba(2, 132, 199, 0.28);
-  --glow-blue: 0 4px 25px rgba(37, 99, 235, 0.25);
-}
 
 * {
   box-sizing: border-box;

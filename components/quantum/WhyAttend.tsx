@@ -7,7 +7,7 @@ import { QuantumBook, QuantumEntangledNodes, QuantumCertificate, QuantumFlask, O
 
 const BENEFITS = [
   { id: "learn", label: "LEARNING", text: "Understand quantum concepts from leading experts without advanced math." },
-  { id: "network", label: "NETWORKING", text: "Connect with researchers, pioneers, and fellow quantum enthusiasts." },
+  { id: "network", label: "NETWORKING", text: "Connect with researchers, pioneers and fellow quantum enthusiasts." },
   { id: "certificate", label: "CERTIFICATES", text: "Receive official IEEE certification to showcase your quantum computing journey." },
   { id: "swags", label: "SWAGS", text: "Earn exclusive quantum odyssey merchandise and goodies." },
 ];
@@ -17,7 +17,6 @@ export default function WhyAttend() {
     <section id="about" className={styles.section}>
       {/* Luminous Quantum Background Visuals */}
       <div className={styles.backgroundLayer}>
-        <QuantumGrid opacity={0.08} />
         <motion.div 
           className={styles.bgOrbital1}
           animate={{ rotate: 360 }}

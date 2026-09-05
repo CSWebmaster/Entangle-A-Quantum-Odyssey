@@ -1,12 +1,12 @@
 .section {
   padding: 8rem 0;
-  background-color: var(--bg-navy);
+  background-color: transparent;
   position: relative;
   overflow: hidden;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
@@ -84,7 +84,7 @@
 .stages {
   display: flex;
   flex-direction: column;
-  gap: 10rem; /* Increased gap for longer scrolling */
+  gap: 8rem;
 }
 
 .stage {
@@ -92,8 +92,8 @@
   align-items: center;
   position: relative;
   width: 50%;
-  opacity: 0.4;
-  transition: opacity 0.5s ease;
+  opacity: 0.45;
+  transition: all 0.5s ease;
 }
 
 .stageActive {
@@ -110,61 +110,124 @@
 .stage:nth-child(even) {
   left: 50%;
   padding-left: 4rem;
+  text-align: left;
 }
 
-.stageNode {
+/* Dirac Qubit Timeline Node */
+.stageNodeQubit {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--bg-card);
-  border: 2px solid var(--border-light);
+  border: 1.5px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
-  transition: all 0.3s ease;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--text-muted);
+  z-index: 4;
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
 }
 
-.stageActive .stageNode {
+.stageActive .stageNodeQubit {
+  border-color: var(--cyan-bright);
+  color: var(--cyan-bright);
+  box-shadow: 0 0 15px rgba(0, 175, 196, 0.4), 0 0 0 4px rgba(7, 29, 51, 0.9);
+  transform: translateY(-50%) scale(1.15);
+}
+
+.stage:nth-child(odd) .stageNodeQubit {
+  right: -19px;
+}
+
+.stage:nth-child(even) .stageNodeQubit {
+  left: -19px;
+}
+
+/* Qubit Form Stage Card */
+.qubitCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  width: 100%;
+  max-width: 420px;
+}
+
+.stageActive .qubitCard {
   border-color: var(--cyan);
-  box-shadow: var(--glow-cyan), 0 0 0 4px var(--bg-navy);
+  box-shadow: 0 15px 40px rgba(0, 175, 196, 0.15);
 }
 
-.stage:nth-child(odd) .stageNode {
-  right: -12px;
+.qubitHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
-.stage:nth-child(even) .stageNode {
-  left: -12px;
+.stage:nth-child(odd) .qubitHeader {
+  justify-content: flex-end;
 }
 
-.nodeCore {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--border-light);
-  transition: all 0.3s ease;
+.stage:nth-child(even) .qubitHeader {
+  justify-content: flex-start;
 }
 
-.stageActive .nodeCore {
-  background: var(--cyan-bright);
+.qubitStateTag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cyan-bright);
+  background: rgba(0, 175, 196, 0.12);
+  border: 1px solid var(--cyan);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+
+.qubitFormula {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold-bright);
+  letter-spacing: 0.05em;
 }
 
 .stageTitle {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--text-primary);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   margin-bottom: 0.5rem;
 }
 
 .stageDesc {
-  color: var(--blue-soft);
-  font-size: 1rem;
-  line-height: 1.6;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+/* Qubit Visual Preview within card */
+.qubitVisualWrapper {
+  height: 90px;
+  background: rgba(7, 29, 51, 0.5);
+  border: 1px dashed var(--border-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -174,15 +237,23 @@
   
   .stage {
     width: 100%;
-    padding-left: 4rem !important;
+    padding-left: 4.5rem !important;
     padding-right: 0 !important;
     text-align: left !important;
     left: 0 !important;
     justify-content: flex-start !important;
   }
+
+  .stage:nth-child(odd) .qubitHeader {
+    justify-content: flex-start;
+  }
   
-  .stageNode {
-    left: 12px !important;
+  .stageNodeQubit {
+    left: 5px !important;
     right: auto !important;
+  }
+
+  .qubitCard {
+    max-width: 100%;
   }
 }

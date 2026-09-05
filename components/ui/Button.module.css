@@ -60,17 +60,6 @@
   transform: translateX(200%);
 }
 
-[data-theme='light'] .primary {
-  background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
-  color: #FFFFFF;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
-  border: 1px solid rgba(2, 132, 199, 0.2);
-}
-
-[data-theme='light'] .primary:hover {
-  box-shadow: 0 6px 25px rgba(2, 132, 199, 0.35);
-}
-
 /* Secondary: Surface button */
 .secondary {
   background: var(--bg-card);
@@ -97,18 +86,6 @@
   color: var(--cyan);
   box-shadow: var(--glow-cyan);
   transform: translateY(-2px);
-}
-
-[data-theme='light'] .outline {
-  background: var(--bg-card);
-  color: var(--cyan-bright);
-  border-color: var(--cyan);
-}
-
-[data-theme='light'] .outline:hover {
-  background: rgba(2, 132, 199, 0.08);
-  border-color: var(--blue);
-  color: var(--blue);
 }
 
 /* Specific dark-context outline */
