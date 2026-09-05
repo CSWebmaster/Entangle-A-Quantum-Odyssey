@@ -27,6 +27,7 @@ export default function OdysseyTimeline() {
       id: "classical",
       title: "CLASSICAL BIT", 
       dirac: "|0⟩ / |1⟩",
+      nodeLabel: "|0/1⟩",
       formula: "Bit ∈ {0, 1}",
       desc: "Discrete deterministic computation. A bit is fixed strictly to zero or one at any instance.",
       renderQubitVisual: () => (
@@ -77,6 +78,7 @@ export default function OdysseyTimeline() {
       id: "superposition",
       title: "SUPERPOSITION QUBIT", 
       dirac: "|+⟩",
+      nodeLabel: "|+⟩",
       formula: "|ψ⟩ = α|0⟩ + β|1⟩",
       desc: "Simultaneous linear combination of orthogonal states on the Bloch Sphere before observation.",
       renderQubitVisual: () => (
@@ -99,6 +101,7 @@ export default function OdysseyTimeline() {
       id: "entanglement",
       title: "ENTANGLED QUBIT PAIR", 
       dirac: "|Φ⁺⟩",
+      nodeLabel: "|Φ⁺⟩",
       formula: "(|00⟩ + |11⟩)/√2",
       desc: "Correlated Bell State pair where measuring one qubit instantaneously dictates the state of its partner.",
       renderQubitVisual: () => (
@@ -139,6 +142,7 @@ export default function OdysseyTimeline() {
       id: "supremacy",
       title: "QUANTUM SUPREMACY", 
       dirac: "|ψ_N⟩",
+      nodeLabel: "|ψ_N⟩",
       formula: "2^N State Space",
       desc: "Exponential parallel exploration of 2^N states solving problems intractable for classical supercomputers.",
       renderQubitVisual: () => (
@@ -233,7 +237,7 @@ export default function OdysseyTimeline() {
                 >
                   {/* Dirac Node along centerline */}
                   <div className={styles.stageNodeQubit}>
-                    {stage.dirac}
+                    {stage.nodeLabel}
                   </div>
 
                   {/* Qubit Stage Card */}
