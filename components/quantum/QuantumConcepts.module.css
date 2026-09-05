@@ -50,18 +50,23 @@
 }
 
 .card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 2.25rem 1.5rem;
+  background: #08223B; /* Solid opaque quantum navy surface */
+  border: 1px solid rgba(0, 175, 196, 0.35);
+  border-radius: 14px;
+  padding: 2.25rem 1.75rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 175, 196, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--cyan-bright);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), var(--glow-cyan);
 }
 
 .visualContainer {
@@ -108,4 +113,3 @@
   z-index: -1;
   transition: opacity 0.3s ease;
 }
-
