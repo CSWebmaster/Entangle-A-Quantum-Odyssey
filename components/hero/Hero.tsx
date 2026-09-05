@@ -57,15 +57,19 @@ export default function Hero() {
             <CountdownTimer />
 
             <div className={styles.actions}>
-              <Button href="https://konfhub.com/entangle-a-quantum-odyssey" variant="primary">
-                REGISTER NOW
-              </Button>
-              <Button href="#odyssey" variant="secondary">
-                EXPLORE ODYSSEY
-              </Button>
-              <Button href="/badge" variant="outline">
-                GENERATE BADGE
-              </Button>
+              <div className={styles.actionRowTop}>
+                <Button href="https://konfhub.com/entangle-a-quantum-odyssey" variant="primary">
+                  REGISTER NOW ↗
+                </Button>
+                <Button href="#odyssey" variant="secondary">
+                  EXPLORE ODYSSEY
+                </Button>
+              </div>
+              <div className={styles.actionRowBottom}>
+                <Button href="/badge" variant="outline">
+                  GENERATE BADGE
+                </Button>
+              </div>
             </div>
           </motion.div>
         </div>

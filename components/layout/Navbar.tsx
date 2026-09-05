@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -16,7 +15,6 @@ const navLinks = [
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
@@ -67,7 +65,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav: Center Links */}
+        {/* Center Links */}
         <div className={styles.navLinks}>
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
@@ -86,7 +84,7 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Desktop Nav: Right Actions */}
+        {/* Right Actions */}
         <div className={styles.navActions}>
           <Link href="/badge" className={styles.generateBadgeBtn}>
             Generate Badge
@@ -103,64 +101,7 @@ export default function Navbar() {
             Volunteer
           </Link>
         </div>
-
-        {/* Mobile Toggle */}
-        <button 
-          className={styles.mobileToggle}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div 
-            className={styles.mobileMenu}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href} 
-                className={styles.mobileLink}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link 
-              href="/badge" 
-              className={styles.mobileActionBtn}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Generate Badge
-            </Link>
-            <a 
-              href="https://konfhub.com/entangle-a-quantum-odyssey" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={styles.mobileRegisterBtn}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Register Now
-            </a>
-            <Link 
-              href="/volunteer" 
-              className={styles.mobileActionBtn}
-              onClick={() => setIsMobileMenuOpen(false)}
-              style={{ borderColor: 'var(--cyan)' }}
-            >
-              Volunteer Portal
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.nav>
   );
 }

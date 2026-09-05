@@ -1,32 +1,21 @@
-.hero {
+.heroSection {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
   background-color: transparent;
+  padding-bottom: 4rem;
+  overflow-x: hidden;
 }
 
-.backgroundDecorations {
+.backgroundLayer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
   pointer-events: none;
-  z-index: 1;
-}
-
-.ambientGlow {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(0, 175, 196, 0.15) 0%, rgba(18, 103, 165, 0.05) 50%, transparent 70%);
-  filter: blur(60px);
 }
 
 .overlayGradient {
@@ -111,16 +100,54 @@
 
 .actions {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.actionRowTop {
+  display: flex;
   gap: 1.5rem;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-  .actions {
+.actionRowBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .contentContainer {
+    padding-top: 90px;
+  }
+
+  .actionRowTop {
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 320px;
+    gap: 0.75rem;
+  }
+
+  .actionRowTop > * {
+    width: 100%;
+    text-align: center;
+  }
+
+  .actionRowBottom {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .actionRowBottom > * {
+    width: 100%;
+    text-align: center;
+  }
+
+  .titleMain {
+    font-size: clamp(2.5rem, 12vw, 4rem);
   }
 }
