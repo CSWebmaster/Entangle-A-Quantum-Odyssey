@@ -50,26 +50,21 @@ export default function Hero() {
             </h1>
             
             <p className={styles.description}>
-              Explore the real quantum computing.<br />
-              One qubit at a time.
+              Explore the real quantum computing. One qubit at a time.
             </p>
 
             <CountdownTimer />
 
             <div className={styles.actions}>
-              <div className={styles.actionRowTop}>
-                <Button href="https://konfhub.com/entangle-a-quantum-odyssey" variant="primary">
-                  REGISTER NOW ↗
-                </Button>
-                <Button href="#odyssey" variant="secondary">
-                  EXPLORE ODYSSEY
-                </Button>
-              </div>
-              <div className={styles.actionRowBottom}>
-                <Button href="/badge" variant="outline">
-                  GENERATE BADGE
-                </Button>
-              </div>
+              <Button href="https://konfhub.com/entangle-a-quantum-odyssey" variant="primary">
+                REGISTER NOW ↗
+              </Button>
+              <Button href="#odyssey" variant="secondary">
+                EXPLORE ODYSSEY
+              </Button>
+              <Button href="/badge" variant="outline">
+                GENERATE BADGE
+              </Button>
             </div>
           </motion.div>
         </div>

@@ -100,24 +100,12 @@
 
 .actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   gap: 1.25rem;
-  margin-top: 1rem;
-}
-
-.actionRowTop {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  align-items: center;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
-}
-
-.actionRowBottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @media (max-width: 640px) {
@@ -125,24 +113,14 @@
     padding-top: 90px;
   }
 
-  .actionRowTop {
+  .actions {
     flex-direction: column;
     width: 100%;
     max-width: 320px;
     gap: 0.75rem;
   }
 
-  .actionRowTop > * {
-    width: 100%;
-    text-align: center;
-  }
-
-  .actionRowBottom {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .actionRowBottom > * {
+  .actions > * {
     width: 100%;
     text-align: center;
   }

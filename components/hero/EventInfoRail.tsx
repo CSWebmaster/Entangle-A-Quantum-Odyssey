@@ -55,8 +55,7 @@ export default function EventInfoRail() {
             <div className={styles.textContent}>
               <span className={styles.label}>LOCATION</span>
               <span className={styles.value}>
-                DR. VIKRAM SARABHAI AUDITORIUM,<br/>
-                9TH FLOOR, EB-BLOCK, SILVER OAK UNIVERSITY
+                DR. VIKRAM SARABHAI AUDITORIUM, 9TH FLOOR, EB-BLOCK, SILVER OAK UNIVERSITY
               </span>
             </div>
           </div>
