@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Background3DElements.module.css";
 
 interface SphereProps {
@@ -100,6 +100,11 @@ function DraggableQubitCube({
 
 export default function Background3DElements() {
   const [mounted, setMounted] = useState(false);
+  const { scrollY } = useScroll();
+
+  // Smooth 3D parallax scroll transforms
+  const rotateX = useSpring(useTransform(scrollY, [0, 3000], [10, -10]), { stiffness: 40, damping: 20 });
+  const rotateY = useSpring(useTransform(scrollY, [0, 3000], [-6, 16]), { stiffness: 40, damping: 20 });
 
   useEffect(() => {
     setMounted(true);
@@ -109,53 +114,60 @@ export default function Background3DElements() {
 
   return (
     <div className={styles.sceneContainer}>
-      <div className={styles.perspectiveStage}>
-        {/* 3D Wireframe Bloch Sphere 1 (Why Attend area) */}
+      {/* 3D Perspective Stage */}
+      <motion.div 
+        className={styles.perspectiveStage}
+        style={{
+          rotateX,
+          rotateY,
+        }}
+      >
+        {/* 3D Wireframe Bloch Sphere 1 */}
         <DraggableBlochSphere
-          initialStyle={{ top: "8%", left: "5%" }}
+          initialStyle={{ top: "15%", left: "6%" }}
           coreType="cyan"
           rotateXDuration={35}
           rotateYDuration={35}
         />
 
-        {/* 3D Floating Quantum Qubit Cube 1 (Quantum Concepts area) */}
-        <DraggableQubitCube
-          initialStyle={{ top: "22%", right: "7%" }}
-          faces={{ front: "|0⟩", back: "|1⟩", right: "H", left: "X", top: "Z", bottom: "ψ" }}
-          rotateXDuration={22}
-          rotateYDuration={28}
-        />
-
-        {/* 3D Wireframe Bloch Sphere 2 (Odyssey Timeline area) */}
+        {/* 3D Wireframe Bloch Sphere 2 */}
         <DraggableBlochSphere
-          initialStyle={{ top: "40%", right: "5%" }}
+          initialStyle={{ top: "55%", right: "6%" }}
           coreType="gold"
           rotateXDuration={45}
           rotateYDuration={45}
           reverse={true}
         />
 
-        {/* 3D Floating Quantum Qubit Cube 2 (Speaker & Schedule area) */}
-        <DraggableQubitCube
-          initialStyle={{ top: "58%", left: "6%" }}
-          faces={{ front: "Q", back: "U", right: "B", left: "I", top: "T", bottom: "✦" }}
-          rotateXDuration={26}
-          rotateYDuration={32}
-          reverse={true}
-        />
-
-        {/* 3D Wireframe Bloch Sphere 3 (Experience Grid area) */}
+        {/* 3D Wireframe Bloch Sphere 3 */}
         <DraggableBlochSphere
-          initialStyle={{ top: "76%", left: "5%" }}
+          initialStyle={{ top: "85%", left: "7%" }}
           coreType="cyan"
           rotateXDuration={40}
           rotateYDuration={40}
           reverse={true}
         />
 
-        {/* 3D Floating Quantum Qubit Cube 3 (FAQ area) */}
+        {/* 3D Floating Quantum Qubit Cube 1 */}
         <DraggableQubitCube
-          initialStyle={{ top: "88%", right: "7%" }}
+          initialStyle={{ top: "28%", right: "12%" }}
+          faces={{ front: "|0⟩", back: "|1⟩", right: "H", left: "X", top: "Z", bottom: "ψ" }}
+          rotateXDuration={22}
+          rotateYDuration={28}
+        />
+
+        {/* 3D Floating Quantum Qubit Cube 2 */}
+        <DraggableQubitCube
+          initialStyle={{ top: "65%", left: "10%" }}
+          faces={{ front: "Q", back: "U", right: "B", left: "I", top: "T", bottom: "✦" }}
+          rotateXDuration={26}
+          rotateYDuration={32}
+          reverse={true}
+        />
+
+        {/* 3D Floating Quantum Qubit Cube 3 */}
+        <DraggableQubitCube
+          initialStyle={{ top: "88%", right: "9%" }}
           faces={{ front: "|1⟩", back: "|0⟩", right: "Z", left: "H", top: "X", bottom: "✦" }}
           rotateXDuration={24}
           rotateYDuration={30}
@@ -163,7 +175,7 @@ export default function Background3DElements() {
 
         {/* 3D Grid Floor */}
         <div className={styles.gridFloor3D} />
-      </div>
+      </motion.div>
     </div>
   );
 }
