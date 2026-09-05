@@ -27,7 +27,6 @@ export const metadata: Metadata = {
 };
 
 import GlobalQuantumField from "@/components/layout/GlobalQuantumField";
-import Background3DElements from "@/components/visuals/Background3DElements";
 import CursorLight from "@/components/visuals/CursorLight";
 
 export default function RootLayout({
@@ -39,7 +38,6 @@ export default function RootLayout({
     <html lang="en" data-theme="dark">
       <body className={`${inter.variable} ${oswald.variable}`}>
         <CursorLight />
-        <Background3DElements />
         <GlobalQuantumField />
         {children}
       </body>
