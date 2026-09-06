@@ -111,63 +111,91 @@ export default function Background3DElements() {
     <div className={styles.sceneContainer}>
       {/* 3D Perspective Stage */}
       <div className={styles.perspectiveStage}>
-        {/* 3D Floating Quantum Qubit Cube 1 (Picked up to the top Why Attend area) */}
+        {/* Why Attend area elements */}
         <DraggableQubitCube
-          initialStyle={{ top: "6%", right: "4%" }}
+          initialStyle={{ top: "4%", left: "4%" }}
           faces={{ front: "|0⟩", back: "|1⟩", right: "|+⟩", left: "|-⟩", top: "|i⟩", bottom: "|ψ⟩" }}
+          rotateXDuration={18}
+          rotateYDuration={24}
+        />
+        <DraggableQubitCube
+          initialStyle={{ top: "8%", right: "3%" }}
+          faces={{ front: "|1⟩", back: "|0⟩", right: "H", left: "X", top: "Z", bottom: "✦" }}
+          rotateXDuration={22}
+          rotateYDuration={28}
+          reverse={true}
+        />
+        <DraggableBlochSphere
+          initialStyle={{ top: "14%", left: "2%" }}
+          coreType="cyan"
+          rotateXDuration={32}
+          rotateYDuration={32}
+        />
+
+        {/* Quantum Concepts area elements */}
+        <DraggableBlochSphere
+          initialStyle={{ top: "24%", right: "3%" }}
+          coreType="gold"
+          rotateXDuration={38}
+          rotateYDuration={38}
+          reverse={true}
+        />
+        <DraggableQubitCube
+          initialStyle={{ top: "32%", left: "3%" }}
+          faces={{ front: "|i⟩", back: "|-i⟩", right: "|1⟩", left: "|0⟩", top: "H", bottom: "ψ" }}
           rotateXDuration={20}
           rotateYDuration={26}
         />
 
-        {/* 3D Wireframe Bloch Sphere 1 (Why Attend / Concepts margin) */}
+        {/* Odyssey Timeline area elements */}
+        <DraggableQubitCube
+          initialStyle={{ top: "42%", right: "4%" }}
+          faces={{ front: "|+⟩", back: "|-⟩", right: "X", left: "Z", top: "|1⟩", bottom: "|0⟩" }}
+          rotateXDuration={25}
+          rotateYDuration={30}
+          reverse={true}
+        />
         <DraggableBlochSphere
-          initialStyle={{ top: "15%", left: "3%" }}
-          coreType="cyan"
-          rotateXDuration={35}
-          rotateYDuration={35}
+          initialStyle={{ top: "50%", left: "2%" }}
+          coreType="gold"
+          rotateXDuration={42}
+          rotateYDuration={42}
         />
 
-        {/* 3D Floating Quantum Qubit Cube 2 (Quantum Concepts margin) */}
+        {/* Speakers area elements */}
+        <DraggableBlochSphere
+          initialStyle={{ top: "60%", right: "3%" }}
+          coreType="cyan"
+          rotateXDuration={36}
+          rotateYDuration={36}
+          reverse={true}
+        />
         <DraggableQubitCube
-          initialStyle={{ top: "30%", left: "4%" }}
-          faces={{ front: "|1⟩", back: "|0⟩", right: "H", left: "X", top: "Z", bottom: "✦" }}
+          initialStyle={{ top: "68%", left: "3%" }}
+          faces={{ front: "|0⟩", back: "|1⟩", right: "H", left: "Z", top: "X", bottom: "✦" }}
           rotateXDuration={22}
           rotateYDuration={28}
         />
 
-        {/* 3D Wireframe Bloch Sphere 2 (Odyssey Timeline margin) */}
+        {/* Schedule & FAQ area elements */}
         <DraggableBlochSphere
-          initialStyle={{ top: "46%", right: "3%" }}
+          initialStyle={{ top: "78%", right: "2%" }}
           coreType="gold"
-          rotateXDuration={45}
-          rotateYDuration={45}
-          reverse={true}
-        />
-
-        {/* 3D Floating Quantum Qubit Cube 3 (Speaker / Schedule margin) */}
-        <DraggableQubitCube
-          initialStyle={{ top: "64%", right: "4%" }}
-          faces={{ front: "|0⟩", back: "|1⟩", right: "X", left: "Z", top: "H", bottom: "ψ" }}
-          rotateXDuration={26}
-          rotateYDuration={32}
-          reverse={true}
-        />
-
-        {/* 3D Wireframe Bloch Sphere 3 (Schedule / FAQ margin) */}
-        <DraggableBlochSphere
-          initialStyle={{ top: "78%", left: "3%" }}
-          coreType="cyan"
           rotateXDuration={40}
           rotateYDuration={40}
-          reverse={true}
         />
-
-        {/* 3D Floating Quantum Qubit Cube 4 (FAQ margin) */}
         <DraggableQubitCube
-          initialStyle={{ top: "90%", left: "4%" }}
-          faces={{ front: "|1⟩", back: "|0⟩", right: "|i⟩", left: "|+⟩", top: "Z", bottom: "✦" }}
+          initialStyle={{ top: "86%", left: "3%" }}
+          faces={{ front: "|1⟩", back: "|0⟩", right: "|i⟩", left: "|+⟩", top: "Z", bottom: "ψ" }}
           rotateXDuration={24}
           rotateYDuration={30}
+          reverse={true}
+        />
+        <DraggableQubitCube
+          initialStyle={{ top: "93%", right: "4%" }}
+          faces={{ front: "Q", back: "U", right: "B", left: "I", top: "T", bottom: "✦" }}
+          rotateXDuration={26}
+          rotateYDuration={32}
         />
 
         {/* 3D Grid Floor */}

@@ -1,11 +1,18 @@
 export const speakers = [
   {
-    id: "jignesh-senjaliya",
-    name: "Mr. Jignesh Senjaliya",
-    designation: "Quantum Computing Researcher & Founder",
-    organization: "AnanthaQ",
-    image: "/speakers/jignesh_senjaliya.png",
-    linkedin: "https://www.linkedin.com/in/jignesh-senjaliya-3a653580?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    id: "alok-shukla",
+    name: "Dr. Alok Shukla",
+    designation: "Assistant Professor & Quantum Computing Researcher",
+    organization: "Ahmedabad University",
+    image: "/speakers/alok_shukla.jpg",
+    linkedin: "https://www.linkedin.com/in/alok-shukla-48930815/",
+  },
+  {
+    id: "christian-perez",
+    name: "Christian Perez",
+    designation: "Founder & CEO | AWS Community Builder",
+    organization: "Altivum Inc.",
+    image: "/speakers/christian_perez.jpg",
+    linkedin: "https://www.linkedin.com/in/thechrisgrey/",
   }
 ];
-
