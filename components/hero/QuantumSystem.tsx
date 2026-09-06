@@ -3,67 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import styles from "./QuantumSystem.module.css";
-interface HeroSphereProps {
-  type: "blue" | "cyan";
-  size?: number;
-}
-
-function Hero3DQubitSphere({ type, size = 190 }: HeroSphereProps) {
-  return (
-    <motion.div 
-      className={styles.heroSphere3DWrapper}
-      style={{ width: size, height: size }}
-      animate={{
-        rotateY: type === "blue" ? [0, 360] : [360, 0],
-        rotateX: type === "blue" ? [18, -18, 18] : [-18, 18, -18],
-      }}
-      transition={{
-        rotateY: { duration: 28, repeat: Infinity, ease: "linear" },
-        rotateX: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-      }}
-    >
-      {/* 3D Multi-Axis Wireframe Orbital Rings */}
-      <div className={`${styles.sphereRing3D} ${styles.sphereRingEquator}`} />
-      <div className={`${styles.sphereRing3D} ${styles.sphereRingMeridianX}`} />
-      <div className={`${styles.sphereRing3D} ${styles.sphereRingMeridianY}`} />
-      <div className={`${styles.sphereRing3D} ${styles.sphereRingDiagonal1}`} />
-      <div className={`${styles.sphereRing3D} ${styles.sphereRingDiagonal2}`} />
-
-      {/* 3D Dirac Notation State Poles */}
-      <div className={styles.poleTop}>
-        <span className={styles.poleLabel}>|0⟩</span>
-      </div>
-      <div className={styles.poleBottom}>
-        <span className={styles.poleLabel}>|1⟩</span>
-      </div>
-
-      {/* 3D Orbiting Quantum Photons on Tilted Planes */}
-      <motion.div 
-        className={styles.orbitingPhotonTrack1}
-        animate={{ rotateZ: [0, 360] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "linear" }}
-      >
-        <div className={styles.orbitingPhoton} />
-      </motion.div>
-      <motion.div 
-        className={styles.orbitingPhotonTrack2}
-        animate={{ rotateZ: [360, 0] }}
-        transition={{ duration: 6.5, repeat: Infinity, ease: "linear" }}
-      >
-        <div className={styles.orbitingPhoton} />
-      </motion.div>
-
-      {/* Central 3D Volumetric Plasma Core */}
-      <div className={type === "blue" ? styles.sphere3DCoreBlue : styles.sphere3DCoreCyan}>
-        <div className={styles.sphere3DSpecular} />
-        <div className={styles.sphere3DInnerGlow} />
-      </div>
-
-      {/* Outer Volumetric Atmosphere Aura */}
-      <div className={type === "blue" ? styles.sphere3DAuraBlue : styles.sphere3DAuraCyan} />
-    </motion.div>
-  );
-}
+import { QuantumOrbitalAnimation } from "../visuals/QuantumPrimitives";
 
 export default function QuantumSystem() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -74,10 +14,10 @@ export default function QuantumSystem() {
   const springX = useSpring(mouseX, { stiffness: 60, damping: 25 });
   const springY = useSpring(mouseY, { stiffness: 60, damping: 25 });
 
-  const rotateX = useTransform(springY, [-1, 1], [-14, 14]);
-  const rotateY = useTransform(springX, [-1, 1], [-14, 14]);
-  const posX = useTransform(springX, [-1, 1], [18, -18]);
-  const posY = useTransform(springY, [-1, 1], [18, -18]);
+  const rotateX = useTransform(springY, [-1, 1], [-12, 12]);
+  const rotateY = useTransform(springX, [-1, 1], [-12, 12]);
+  const posX = useTransform(springX, [-1, 1], [15, -15]);
+  const posY = useTransform(springY, [-1, 1], [15, -15]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -105,9 +45,13 @@ export default function QuantumSystem() {
         }}
       >
         <div className={styles.quantumFraming}>
-          {/* Left 3D Qubit Sphere */}
+          {/* Left Qubit Sphere */}
           <div className={styles.qubitLeft}>
-            <Hero3DQubitSphere type="blue" size={190} />
+            <QuantumOrbitalAnimation radius={250} particleCount={4} speed={8}>
+              <div className={styles.largeSphereBlue}>
+                <div className={styles.sphereHighlight} />
+              </div>
+            </QuantumOrbitalAnimation>
           </div>
           
           {/* Quantum State Exchange Laser Beam */}
@@ -176,15 +120,16 @@ export default function QuantumSystem() {
             />
           </svg>
 
-          {/* Right 3D Qubit Sphere */}
+          {/* Right Qubit Sphere */}
           <div className={styles.qubitRight}>
-            <Hero3DQubitSphere type="cyan" size={190} />
+            <QuantumOrbitalAnimation radius={250} particleCount={3} speed={6}>
+              <div className={styles.largeSphereCyan}>
+                <div className={styles.sphereHighlight} />
+              </div>
+            </QuantumOrbitalAnimation>
           </div>
         </div>
       </motion.div>
     </div>
   );
 }
-
-
-
