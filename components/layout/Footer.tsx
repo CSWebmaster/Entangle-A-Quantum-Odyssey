@@ -55,6 +55,15 @@ const socialLinks = [
   },
 ];
 
+const coordinators = [
+  { name: "Rishi Amrutiya", phone: "+91 63524 74784", tel: "+916352474784" },
+  { name: "Dhruv Chavda", phone: "+91 79908 15230", tel: "+917990815230" },
+  { name: "Manthan Davra", phone: "+91 83209 48255", tel: "+918320948255" },
+  { name: "Ranveer Singh", phone: "+91 72754 08209", tel: "+917275408209" },
+  { name: "Dheer Patel", phone: "+91 70438 18236", tel: "+917043818236" },
+  { name: "Anugrah Polara", phone: "+91 63539 54460", tel: "+916353954460" },
+];
+
 export default function Footer() {
   return (
     <footer id="contact" className={styles.footer}>
@@ -124,14 +133,12 @@ export default function Footer() {
                   </svg>
                 </span>
                 <div className={styles.phoneList}>
-                  <a href="tel:+917990815230" className={styles.phoneRow}>
-                    <span className={styles.coordinatorName}>Dhruv Chavda:</span>
-                    <span className={styles.coordinatorPhone}>+91 79908 15230</span>
-                  </a>
-                  <a href="tel:+918320948255" className={styles.phoneRow}>
-                    <span className={styles.coordinatorName}>Manthan Davra:</span>
-                    <span className={styles.coordinatorPhone}>+91 83209 48255</span>
-                  </a>
+                  {coordinators.map((c) => (
+                    <a key={c.name} href={`tel:${c.tel}`} className={styles.phoneRow}>
+                      <span className={styles.coordinatorName}>{c.name}:</span>
+                      <span className={styles.coordinatorPhone}>{c.phone}</span>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
