@@ -55,21 +55,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-width: 65px;
+  justify-content: flex-start;
+  min-width: 60px;
 }
 
 .timeValue {
   font-family: var(--font-oswald);
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.4rem);
   font-weight: 700;
   line-height: 1;
+  height: 2.4rem;
   color: var(--text-primary);
   letter-spacing: 0.05em;
   background: linear-gradient(180deg, var(--text-primary) 0%, var(--cyan) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .timeUnit {
@@ -82,17 +85,24 @@
   line-height: 1;
 }
 
+.colonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .colon {
   font-family: var(--font-oswald);
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   font-weight: 700;
   color: var(--cyan);
   opacity: 0.6;
-  line-height: 1;
-  margin-top: 0.35rem;
+  height: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
 }
 
 @keyframes pulseLive {
@@ -119,6 +129,7 @@
 
   .timeValue {
     font-size: 1.45rem;
+    height: 1.6rem;
   }
 
   .timeUnit {
@@ -129,7 +140,7 @@
 
   .colon {
     font-size: 1.15rem;
-    margin-top: 0.15rem;
+    height: 1.6rem;
   }
 }
 
@@ -140,15 +151,16 @@
   }
 
   .timeBox {
-    min-width: 42px;
+    min-width: 40px;
   }
 
   .timeValue {
     font-size: 1.25rem;
+    height: 1.4rem;
   }
 
   .colon {
     font-size: 0.95rem;
-    margin-top: 0.15rem;
+    height: 1.4rem;
   }
 }

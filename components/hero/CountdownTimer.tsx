@@ -65,21 +65,27 @@ export default function CountdownTimer() {
           <span className={styles.timeUnit}>Days</span>
         </div>
 
-        <span className={styles.colon}>:</span>
+        <div className={styles.colonWrapper}>
+          <span className={styles.colon}>:</span>
+        </div>
 
         <div className={styles.timeBox}>
           <span className={styles.timeValue}>{pad(timeLeft.hours)}</span>
           <span className={styles.timeUnit}>Hours</span>
         </div>
 
-        <span className={styles.colon}>:</span>
+        <div className={styles.colonWrapper}>
+          <span className={styles.colon}>:</span>
+        </div>
 
         <div className={styles.timeBox}>
           <span className={styles.timeValue}>{pad(timeLeft.minutes)}</span>
           <span className={styles.timeUnit}>Minutes</span>
         </div>
 
-        <span className={styles.colon}>:</span>
+        <div className={styles.colonWrapper}>
+          <span className={styles.colon}>:</span>
+        </div>
 
         <div className={styles.timeBox}>
           <span className={styles.timeValue}>{pad(timeLeft.seconds)}</span>
