@@ -1,9 +1,9 @@
 .section {
-  padding: clamp(2rem, 5vh, 6rem) 0;
+  padding: clamp(3rem, 6vh, 6rem) 0;
   background-color: transparent;
   position: relative;
   z-index: 10;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +27,7 @@
   left: -100px;
   width: 450px;
   height: 450px;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .bgOrbital2 {
@@ -36,27 +36,28 @@
   right: -100px;
   width: 550px;
   height: 550px;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .header {
   text-align: center;
-  margin-bottom: clamp(2rem, 4vh, 4rem);
+  margin-bottom: clamp(2rem, 4vh, 3.5rem);
 }
 
 .title {
   font-family: var(--font-oswald);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   color: var(--text-primary);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 .grid {
@@ -65,25 +66,11 @@
   gap: 1.5rem;
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-}
-
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 2.5rem 1.5rem;
+  border-radius: 14px;
+  padding: 2.25rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,12 +90,12 @@
 }
 
 .visualContainer {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .coreNode {
@@ -124,15 +111,43 @@
 
 .cardTitle {
   font-family: var(--font-mono);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--cyan-bright);
-  margin-bottom: 1rem;
-  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.06em;
 }
 
 .cardText {
   font-family: var(--font-body);
   color: var(--blue-soft);
-  line-height: 1.6;
-  font-size: 0.95rem;
+  line-height: 1.55;
+  font-size: 0.925rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .bgOrbital1,
+  .bgOrbital2 {
+    display: none;
+  }
 }

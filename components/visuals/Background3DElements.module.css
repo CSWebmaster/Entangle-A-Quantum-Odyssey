@@ -26,6 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.3s ease;
 }
 
 /* 3D Wireframe Bloch Spheres (Clean, Symmetric & Non-wobbling) */
@@ -325,4 +326,19 @@
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
   pointer-events: none;
+}
+
+/* Mobile Responsiveness for 3D Background Elements */
+@media (max-width: 768px) {
+  .elementAnchor {
+    transform: scale(0.7);
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 480px) {
+  .elementAnchor {
+    transform: scale(0.55);
+    opacity: 0.25;
+  }
 }

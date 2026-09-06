@@ -128,9 +128,17 @@
 @media (max-width: 768px) {
   .quantumFraming {
     transform: translate(-50%, -50%) scale(0.55);
+    opacity: 0.5;
   }
   .largeSphereBlue, .largeSphereCyan {
     width: 80px;
     height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quantumFraming {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0.35;
   }
 }

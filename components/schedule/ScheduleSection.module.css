@@ -4,7 +4,7 @@
   position: relative;
   background: transparent;
   z-index: 10;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,26 +14,27 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   position: relative;
+  width: 100%;
 }
 
 .header {
   text-align: center;
-  margin-bottom: clamp(2.5rem, 5vh, 4.5rem);
+  margin-bottom: clamp(2rem, 4vh, 4rem);
 }
 
 .title {
   font-family: var(--font-oswald);
-  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
   color: var(--text-primary);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   font-family: var(--font-mono);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   letter-spacing: 0.15em;
   color: var(--cyan);
   text-transform: uppercase;
@@ -48,7 +49,7 @@
 .capsulesGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: stretch;
   position: relative;
   z-index: 2;
@@ -58,9 +59,9 @@
 .capsule {
   position: relative;
   background: var(--bg-card);
-  border: 2px solid var(--border-light);
-  border-radius: 140px 140px 36px 36px;
-  padding: 4rem 2.5rem 3.5rem;
+  border: 1.5px solid var(--border-light);
+  border-radius: 100px 100px 28px 28px;
+  padding: 3.5rem 2rem 3rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -79,32 +80,32 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 140px;
+  height: 120px;
   background: radial-gradient(ellipse at top, rgba(0, 175, 196, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .capsuleHeader {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.75rem;
   position: relative;
   z-index: 2;
 }
 
 .dayNumber {
   font-family: var(--font-mono);
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--text-primary);
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .dayTheme {
   font-family: var(--font-oswald);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   color: var(--cyan);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-shadow: var(--glow-cyan);
   line-height: 1.1;
 }
@@ -119,7 +120,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
+  gap: 1.75rem;
   flex: 1;
 }
 
@@ -148,7 +149,7 @@
 .sessionRow {
   display: flex;
   align-items: flex-start;
-  gap: 1.75rem;
+  gap: 1.5rem;
   position: relative;
   z-index: 2;
 }
@@ -179,8 +180,8 @@
 }
 
 .coreNodeBuild {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border: 2px solid var(--teal);
   background: var(--bg-navy);
   transform: rotate(45deg);
@@ -191,8 +192,8 @@
 }
 
 .circuitInner {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   background: var(--cyan-bright);
 }
 
@@ -201,8 +202,8 @@
   flex: 1;
   background: var(--bg-primary);
   border: 1px solid var(--border-light);
-  border-radius: 14px;
-  padding: 1.5rem 1.75rem;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -218,24 +219,24 @@
 .timeBadge {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--cyan);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   background: rgba(0, 175, 196, 0.08);
-  padding: 0.25rem 0.65rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 6px;
   border: 1px solid rgba(0, 175, 196, 0.2);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.5rem;
 }
 
 .sessionTitle {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: 0.04em;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
   transition: color 0.2s ease;
 }
 
@@ -245,46 +246,60 @@
 
 .sessionDescription {
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   color: var(--blue-soft);
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 @media (max-width: 1024px) {
   .capsulesGrid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
-
-  .quantumBridge {
-    display: none;
+    gap: 2.5rem;
   }
 
   .capsule {
-    border-radius: 100px 100px 28px 28px;
-    padding: 3rem 1.5rem 2.5rem;
+    border-radius: 60px 60px 24px 24px;
+    padding: 2.75rem 1.5rem 2.25rem;
   }
 }
 
 @media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
   .capsule {
-    border-radius: 80px 80px 20px 20px;
-    padding: 2.5rem 1rem 2rem;
+    border-radius: 36px 36px 16px 16px;
+    padding: 2rem 0.85rem 1.75rem;
+  }
+
+  .capsuleHeader {
+    margin-bottom: 1.75rem;
   }
 
   .sessionRow {
-    gap: 1rem;
+    gap: 0.65rem;
   }
 
   .nodeVisual {
-    width: 40px;
+    width: 32px;
+    margin-top: 1rem;
   }
 
   .timelineTrack {
-    left: 20px;
+    left: 15px;
   }
 
   .sessionCard {
-    padding: 1.25rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .sessionTitle {
+    font-size: 1.05rem;
+  }
+
+  .sessionDescription {
+    font-size: 0.85rem;
   }
 }
