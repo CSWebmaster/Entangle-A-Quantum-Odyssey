@@ -20,7 +20,7 @@ export default function SpeakerProfile() {
           <h2 className={styles.title}>Meet Our Speakers</h2>
         </motion.div>
 
-        <div className={styles.presentationContainer} style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+        <div className={styles.speakersGrid}>
           {speakers.map((speaker, index) => (
             <SpeakerCard key={speaker.id} speaker={speaker} index={index} />
           ))}
