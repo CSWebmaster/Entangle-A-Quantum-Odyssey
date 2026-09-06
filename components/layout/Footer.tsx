@@ -64,8 +64,8 @@ export default function Footer() {
       </div>
 
       <div className={styles.container}>
+        {/* Top Content Row: Brand on Left, Institutional Partners on Right */}
         <div className={styles.content}>
-          {/* Brand & Mission */}
           <div className={styles.brandSection}>
             <h2 className={styles.title}>ENTANGLE</h2>
             <p className={styles.subtitle}>A QUANTUM ODYSSEY</p>
@@ -75,37 +75,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Contact & Inquiries */}
-          <div className={styles.contactSection}>
-            <p className={styles.sectionLabel}>CONTACT & INQUIRIES</p>
-            <div className={styles.contactList}>
-              <a href="tel:+917990815230" className={styles.contactCard}>
-                <div className={styles.contactIcon}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                </div>
-                <div className={styles.contactInfo}>
-                  <span className={styles.contactName}>Dhruv Chavda</span>
-                  <span className={styles.contactNumber}>+91 79908 15230</span>
-                </div>
-              </a>
-
-              <a href="tel:+918320948255" className={styles.contactCard}>
-                <div className={styles.contactIcon}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                </div>
-                <div className={styles.contactInfo}>
-                  <span className={styles.contactName}>Manthan Davra</span>
-                  <span className={styles.contactNumber}>+91 83209 48255</span>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          {/* Institutional Partners */}
           <div className={styles.institutionalSection}>
             <p className={styles.sectionLabel}>HOSTED BY</p>
             <div className={styles.boxesGrid}>
@@ -122,6 +91,42 @@ export default function Footer() {
                 <img src="/brand/kalpvruksh.png" alt="Kalpvruksh - Multidisciplinary Conclave of SOU" className={styles.logoImage} />
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Dedicated Event Inquiries & Contact Bar */}
+        <div className={styles.coordinatorsSection}>
+          <div className={styles.coordinatorsHeader}>
+            <span className={styles.coordinatorsDot} />
+            <span className={styles.coordinatorsLabel}>EVENT INQUIRIES & COORDINATION</span>
+          </div>
+
+          <div className={styles.coordinatorsGrid}>
+            <a href="tel:+917990815230" className={styles.coordinatorPill}>
+              <div className={styles.pillIcon}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div className={styles.pillText}>
+                <span className={styles.pillName}>Dhruv Chavda</span>
+                <span className={styles.pillPhone}>+91 79908 15230</span>
+              </div>
+              <span className={styles.pillAction}>Call ↗</span>
+            </a>
+
+            <a href="tel:+918320948255" className={styles.coordinatorPill}>
+              <div className={styles.pillIcon}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div className={styles.pillText}>
+                <span className={styles.pillName}>Manthan Davra</span>
+                <span className={styles.pillPhone}>+91 83209 48255</span>
+              </div>
+              <span className={styles.pillAction}>Call ↗</span>
+            </a>
           </div>
         </div>
 
