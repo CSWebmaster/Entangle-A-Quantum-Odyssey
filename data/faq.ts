@@ -17,6 +17,6 @@ export const faqData = [
   },
   {
     question: "Where can I follow updates and connect with the community?",
-    answer: "Follow our official Silver Oak University IEEE Student Branch channels on Instagram (@ieee_silveroakuni), LinkedIn, X (@IEEE_SilverOak) and Facebook for live announcements, speaker highlights and event updates, or reach out at ieee@silveroakuni.ac.in."
+    answer: "Follow our official Silver Oak University IEEE Student Branch channels on Instagram (@ieee_silveroakuni), LinkedIn, X (@IEEE_SilverOak) and Facebook for live announcements, speaker highlights and event updates, or reach out at ieee.fbc@socet.edu.in."
   },
 ];
