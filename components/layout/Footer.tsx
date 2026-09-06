@@ -82,9 +82,17 @@ export default function Footer() {
               Explore the real quantum computing.<br />
               One qubit at a time.
             </p>
-            <p className={styles.venueInfo}>
-              📍 Silver Oak University, Ahmedabad
-            </p>
+            <div className={styles.venueInfo}>
+              <span className={styles.venueIcon}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <span className={styles.venueText}>
+                DR. VIKRAM SARABHAI AUDITORIUM, 9TH FLOOR, EB-BLOCK, SILVER OAK UNIVERSITY
+              </span>
+            </div>
           </div>
 
           {/* Column 2: Institutional Partners */}
