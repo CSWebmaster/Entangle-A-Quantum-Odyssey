@@ -45,18 +45,16 @@
 }
 
 .content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.3fr;
   align-items: flex-start;
   margin-bottom: 3.5rem;
-  flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .brandSection {
   display: flex;
   flex-direction: column;
-  max-width: 460px;
 }
 
 .title {
@@ -81,24 +79,91 @@
   line-height: 1.6;
 }
 
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.85rem;
+  font-weight: 600;
+}
+
+/* Contact Section */
+.contactSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(7, 29, 51, 0.8);
+  border: 1px solid rgba(0, 175, 196, 0.3);
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.contactCard:hover {
+  border-color: var(--cyan-bright);
+  background: rgba(0, 175, 196, 0.12);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-cyan);
+}
+
+.contactIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 175, 196, 0.15);
+  border: 1px solid rgba(0, 175, 196, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan-bright);
+  flex-shrink: 0;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactName {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.contactNumber {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--cyan-bright);
+  letter-spacing: 0.05em;
+  margin-top: 0.15rem;
+}
+
+/* Institutional Partners */
 .institutionalSection {
   display: flex;
   flex-direction: column;
 }
 
-.sectionLabel {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.85rem;
-}
-
 .boxesGrid {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
 }
 
 .hostBox {
@@ -106,7 +171,7 @@
   align-items: center;
   justify-content: center;
   background: #071D33;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.85rem;
   border-radius: 8px;
   border: 1px solid rgba(0, 175, 196, 0.3);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -121,13 +186,14 @@
 }
 
 .logoImage {
-  height: 32px;
+  height: 28px;
   width: auto;
-  max-width: 130px;
+  max-width: 120px;
   object-fit: contain;
   display: block;
 }
 
+/* Social Row */
 .socialBar {
   display: flex;
   align-items: center;
@@ -193,30 +259,14 @@
   z-index: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
   .footer {
     padding: 3.5rem 0 1.75rem;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 2.25rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .brandSection {
-    max-width: 100%;
-  }
-
-  .boxesGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .hostBox {
-    width: 100%;
   }
 }
 
@@ -233,9 +283,13 @@
     font-size: 0.875rem;
   }
 
+  .boxesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .logoImage {
-    height: 26px;
-    max-width: 100px;
+    height: 24px;
+    max-width: 95px;
   }
 
   .bottomBar {
