@@ -7,119 +7,308 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  perspective: 1200px;
 }
 
 .perspectiveStage {
   width: 100%;
   height: 100%;
   position: relative;
-  transform-style: preserve-3d;
   pointer-events: none;
 }
 
-/* Draggable Wrapper placed at the back */
-.draggableWrapper {
+/* Element Anchor fixed firmly in its background coordinate */
+.elementAnchor {
   position: absolute;
-  pointer-events: auto;
-  cursor: grab;
-  touch-action: none;
-  user-select: none;
+  pointer-events: none;
   transform-style: preserve-3d;
+  perspective: 600px;
   z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.draggableWrapper:active {
-  cursor: grabbing;
-}
-
-/* 3D Wireframe Bloch Sphere (Compact & Subtle) */
+/* 3D Wireframe Bloch Spheres (Clean, Symmetric & Non-wobbling) */
 .blochSphere3D {
-  width: 130px;
-  height: 130px;
+  width: 68px;
+  height: 68px;
+  aspect-ratio: 1 / 1;
   transform-style: preserve-3d;
   position: relative;
+  pointer-events: none;
+}
+
+.blochSphereSmall {
+  width: 48px;
+  height: 48px;
+  aspect-ratio: 1 / 1;
+}
+
+.blochSphereMicro {
+  width: 34px;
+  height: 34px;
+  aspect-ratio: 1 / 1;
 }
 
 .ring3D {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   border: 1px dashed var(--cyan);
   opacity: 0.45;
-  box-shadow: 0 0 10px rgba(0, 175, 196, 0.2);
+  box-shadow: 0 0 8px rgba(0, 175, 196, 0.2);
+  box-sizing: border-box;
 }
 
-.ringX {
-  transform: rotateX(90deg);
+.ringGold {
+  border-color: var(--gold);
+  box-shadow: 0 0 8px rgba(234, 168, 20, 0.2);
 }
 
-.ringY {
-  transform: rotateY(90deg);
+.ringViolet {
+  border-color: #A855F7;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.2);
 }
 
-.ringZ {
-  transform: rotateZ(0deg);
+.ringBlue {
+  border-color: #38BDF8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
 }
+
+.ringSolid {
+  border-style: solid;
+  opacity: 0.3;
+}
+
+.ringX { transform: rotateX(90deg); }
+.ringY { transform: rotateY(90deg); }
+.ringZ { transform: rotateZ(0deg); }
 
 .sphereCore {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 16px;
-  height: 16px;
-  margin-top: -8px;
-  margin-left: -8px;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
+  margin-left: -4.5px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--cyan-bright), var(--teal));
-  box-shadow: 0 0 20px var(--cyan-bright);
+  background: radial-gradient(circle, #FFFFFF, var(--cyan-bright) 60%, var(--teal));
+  box-shadow: 0 0 12px var(--cyan-bright);
+}
+
+.blochSphereMicro .sphereCore {
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  margin-left: -3px;
 }
 
 .sphereCoreGold {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 16px;
-  height: 16px;
-  margin-top: -8px;
-  margin-left: -8px;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
+  margin-left: -4.5px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--gold-bright), var(--gold));
-  box-shadow: 0 0 20px var(--gold-bright);
+  background: radial-gradient(circle, #FFFBEB, var(--gold-bright) 60%, var(--gold));
+  box-shadow: 0 0 12px var(--gold-bright);
 }
 
-/* 3D Floating Cube (Compact & Subtle) */
+.blochSphereMicro .sphereCoreGold {
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+.sphereCoreViolet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FAF5FF, #C084FC 60%, #9333EA);
+  box-shadow: 0 0 12px #C084FC;
+}
+
+.blochSphereMicro .sphereCoreViolet {
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+.sphereCoreBlue {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #EFF6FF, #60A5FA 60%, #2563EB);
+  box-shadow: 0 0 12px #60A5FA;
+}
+
+/* 3D Floating Qubit Cubes (Compact & Perfectly Centered) */
 .cube3D {
-  width: 44px;
-  height: 44px;
+  width: 28px;
+  height: 28px;
+  aspect-ratio: 1 / 1;
   transform-style: preserve-3d;
   position: relative;
+  pointer-events: none;
+}
+
+.cubeMini {
+  width: 22px;
+  height: 22px;
 }
 
 .face {
   position: absolute;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--cyan-bright);
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(0, 175, 196, 0.65);
   background: rgba(0, 175, 196, 0.08);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: bold;
+  font-size: 0.65rem;
+  font-weight: 700;
   color: var(--cyan-bright);
-  box-shadow: inset 0 0 10px rgba(0, 175, 196, 0.15);
+  box-shadow: inset 0 0 6px rgba(0, 175, 196, 0.15);
+  user-select: none;
+  box-sizing: border-box;
 }
 
-.front  { transform: rotateY(0deg) translateZ(22px); }
-.back   { transform: rotateY(180deg) translateZ(22px); }
-.right  { transform: rotateY(90deg) translateZ(22px); }
-.left   { transform: rotateY(-90deg) translateZ(22px); }
-.top    { transform: rotateX(90deg) translateZ(22px); }
-.bottom { transform: rotateX(-90deg) translateZ(22px); }
+.cubeMini .face {
+  width: 22px;
+  height: 22px;
+  font-size: 0.55rem;
+}
+
+.faceGold {
+  border-color: rgba(245, 184, 46, 0.65);
+  background: rgba(245, 184, 46, 0.08);
+  color: var(--gold-bright);
+  box-shadow: inset 0 0 6px rgba(245, 184, 46, 0.15);
+}
+
+.faceViolet {
+  border-color: rgba(192, 132, 252, 0.65);
+  background: rgba(192, 132, 252, 0.08);
+  color: #C084FC;
+  box-shadow: inset 0 0 6px rgba(192, 132, 252, 0.15);
+}
+
+.front  { transform: rotateY(0deg) translateZ(14px); }
+.back   { transform: rotateY(180deg) translateZ(14px); }
+.right  { transform: rotateY(90deg) translateZ(14px); }
+.left   { transform: rotateY(-90deg) translateZ(14px); }
+.top    { transform: rotateX(90deg) translateZ(14px); }
+.bottom { transform: rotateX(-90deg) translateZ(14px); }
+
+.cubeMini .front  { transform: rotateY(0deg) translateZ(11px); }
+.cubeMini .back   { transform: rotateY(180deg) translateZ(11px); }
+.cubeMini .right  { transform: rotateY(90deg) translateZ(11px); }
+.cubeMini .left   { transform: rotateY(-90deg) translateZ(11px); }
+.cubeMini .top    { transform: rotateX(90deg) translateZ(11px); }
+.cubeMini .bottom { transform: rotateX(-90deg) translateZ(11px); }
+
+/* 3D Quantum Diamond Crystal */
+.diamond3D {
+  width: 26px;
+  height: 26px;
+  aspect-ratio: 1 / 1;
+  transform-style: preserve-3d;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.diamondRing1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 175, 196, 0.55);
+  transform: rotate(45deg);
+  background: rgba(0, 175, 196, 0.08);
+  box-shadow: 0 0 6px rgba(0, 175, 196, 0.2);
+}
+
+.diamondRing2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed rgba(245, 184, 46, 0.55);
+  transform: rotate(45deg) rotateY(90deg);
+}
+
+.diamondCore {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 8px var(--cyan-bright);
+}
+
+/* Quantum Dirac Ket Badge */
+.ketBadge {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(7, 29, 51, 0.7);
+  border: 1px solid rgba(0, 175, 196, 0.35);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--cyan-bright);
+  box-shadow: 0 0 8px rgba(0, 175, 196, 0.15);
+  position: relative;
+  pointer-events: none;
+}
+
+.ketBadgeGold {
+  border-color: rgba(245, 184, 46, 0.35);
+  color: var(--gold-bright);
+  box-shadow: 0 0 8px rgba(245, 184, 46, 0.15);
+}
+
+.ketBadgeViolet {
+  border-color: rgba(192, 132, 252, 0.35);
+  color: #C084FC;
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.15);
+}
+
+.ketOrbitRing {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 175, 196, 0.3);
+  pointer-events: none;
+}
 
 /* 3D Perspective Grid Floor */
 .gridFloor3D {
