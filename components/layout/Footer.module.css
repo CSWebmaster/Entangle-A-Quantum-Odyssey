@@ -207,28 +207,32 @@
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
+  width: 100%;
 }
 
-.phoneList {
+.phoneGrid {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
+  width: 100%;
 }
 
 .phoneRow {
-  display: flex;
+  display: grid;
+  grid-template-columns: 125px 1fr;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   color: var(--blue-soft);
   text-decoration: none;
   font-size: 0.88rem;
   transition: all 0.2s ease;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .coordinatorName {
   color: var(--text-primary);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .coordinatorPhone {
@@ -237,6 +241,7 @@
   font-weight: 600;
   letter-spacing: 0.03em;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .phoneRow:hover .coordinatorPhone {
@@ -359,11 +364,13 @@
   }
 
   .phoneRow {
-    font-size: 0.875rem;
+    grid-template-columns: 112px 1fr;
+    font-size: 0.82rem;
+    gap: 0.3rem;
   }
 
   .coordinatorPhone {
-    font-size: 0.84rem;
+    font-size: 0.8rem;
   }
 
   .socialCircleBtn {
