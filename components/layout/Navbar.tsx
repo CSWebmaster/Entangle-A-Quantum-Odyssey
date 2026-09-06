@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Speakers", href: "/#speakers" },
   { name: "Schedule", href: "/#schedule" },
   { name: "FAQ", href: "/#faq" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -24,7 +25,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 30);
 
       // Determine active section based on scroll position
-      const sections = ["about", "speakers", "schedule", "faq"];
+      const sections = ["about", "speakers", "schedule", "faq", "contact"];
       let current = "";
       for (const section of sections) {
         const el = document.getElementById(section);
