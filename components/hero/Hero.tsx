@@ -57,7 +57,7 @@ export default function Hero() {
 
             <div className={styles.actions}>
               <Button href="https://konfhub.com/entangle-a-quantum-odyssey" variant="primary">
-                REGISTER NOW ↗
+                REGISTER NOW
               </Button>
               <Button href="#odyssey" variant="secondary">
                 EXPLORE ODYSSEY
